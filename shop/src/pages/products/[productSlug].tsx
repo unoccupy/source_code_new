@@ -166,7 +166,7 @@ const ProductPage: NextPageWithLayout<
                 className="flex-shrink-0 pb-6 pt-2.5 lg:min-w-[350px] lg:max-w-[470px] lg:pb-0"
               />
             </div>
-            <div className="mt-4 w-full md:mt-8 md:space-y-10 lg:mt-12 lg:flex lg:flex-col lg:space-y-12">
+            {/* <div className="mt-4 w-full md:mt-8 md:space-y-10 lg:mt-12 lg:flex lg:flex-col lg:space-y-12">
               <AverageRatings
                 ratingCount={rating_count}
                 totalReviews={total_reviews}
@@ -177,7 +177,7 @@ const ProductPage: NextPageWithLayout<
                 productId={product?.id}
                 shopId={product?.shop?.id}
               />
-            </div>
+            </div> */}
           </div>
 
           <ProductSocialShare

@@ -24,32 +24,32 @@ export default function Logo({
       )}
       {...props}
     >
-      <span
+      {/* <span
         className="relative overflow-hidden"
         style={{
           width: siteSettings?.width,
           height: siteSettings?.height,
         }}
-      >
-        {isMounted && isDarkMode && (
-          <Image
-            src={settings?.dark_logo?.original ?? darkLogo}
-            layout="fill"
-            objectFit="contain"
-            loading="eager"
-            alt={settings?.siteTitle ?? 'Dark Logo'}
-          />
-        )}
-        {isMounted && !isDarkMode && (
-          <Image
-            src={settings?.logo?.original ?? lightLogo}
-            layout="fill"
-            objectFit="contain"
-            loading="eager"
-            alt={settings?.siteTitle ?? 'Light Logo'}
-          />
-        )}
-      </span>
+      > */}
+      {isMounted && isDarkMode && (
+        <Image
+          src={settings?.dark_logo?.original ?? darkLogo}
+          // layout="fill"
+          // objectFit="contain"
+          // loading="eager"
+          alt={settings?.siteTitle ?? 'Dark Logo'}
+        />
+      )}
+      {isMounted && !isDarkMode && (
+        <Image
+          src={settings?.logo?.original ?? lightLogo}
+          // layout="fill"
+          // objectFit="contain"
+          // loading="eager"
+          alt={settings?.siteTitle ?? 'Light Logo'}
+        />
+      )}
+      {/* </span> */}
     </AnchorLink>
   );
 }

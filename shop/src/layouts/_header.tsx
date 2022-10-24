@@ -26,18 +26,18 @@ const AuthorizedMenuItems = [
     label: 'text-auth-profile',
     path: routes.profile,
   },
-  {
-    label: 'text-auth-purchase',
-    path: routes.purchases,
-  },
-  {
-    label: 'text-auth-wishlist',
-    path: routes.wishlists,
-  },
-  {
-    label: 'text-followed-authors',
-    path: routes.followedShop,
-  },
+  // {
+  //   label: 'text-auth-purchase',
+  //   path: routes.purchases,
+  // },
+  // {
+  //   label: 'text-auth-wishlist',
+  //   path: routes.wishlists,
+  // },
+  // {
+  //   label: 'text-followed-authors',
+  //   path: routes.followedShop,
+  // },
   {
     label: 'text-auth-password',
     path: routes.password,
@@ -151,9 +151,9 @@ export default function Header({
         <SearchButton className="hidden sm:flex" />
         <ThemeSwitcher />
         <GridSwitcher />
-        {asPath !== routes.checkout && (
+        {/* {asPath !== routes.checkout && (
           <CartButton className="hidden sm:flex" />
-        )}
+        )} */}
         {isMultiLangEnable ? (
           <div className="ltr:ml-auto rtl:mr-auto">
             <LanguageSwitcher />

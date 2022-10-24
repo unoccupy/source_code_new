@@ -1,5 +1,6 @@
 const routes = {
   home: '/',
+  rentals: '/rentals',
   authors: '/authors',
   explore: '/explore',
   popularProducts: '/popular-products',

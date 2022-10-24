@@ -1,9 +1,9 @@
-import lightModeLogo from '@/assets/images/logo-black.svg';
-import darkModeLogo from '@/assets/images/logo-white.svg';
+import lightModeLogo from '@/assets/images/unoccupy-bold-blue.png';
+import darkModeLogo from '@/assets/images/unoccupy-bold-white.png';
 
 export const siteSettings = {
   lightLogo: lightModeLogo,
   darkLogo: darkModeLogo,
-  width: 128,
-  height: 40,
+  // width: 128,
+  // height: 40,
 };

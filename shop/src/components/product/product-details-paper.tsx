@@ -12,6 +12,7 @@ import pluralize from 'pluralize';
 import FreeDownloadButton from './free-download-button';
 import FavoriteButton from '@/components/favorite/favorite-button';
 import { useTranslation } from 'next-i18next';
+import RentNowButton from './rent-now-button';
 
 interface Props {
   product: Product;
@@ -49,7 +50,7 @@ export default function ProductDetailsPaper({ product, className }: Props) {
         </div>
 
         <div className="items-center pt-1.5 rtl:space-x-reverse lg:flex lg:space-x-6 lg:pt-2.5 3xl:pt-4">
-          <div className="flex items-center pb-4 lg:pb-0">
+          <div className="flex items-center pb-4">
             <div className="relative flex h-7 w-7 flex-shrink-0">
               <Image
                 alt={shop?.name}
@@ -69,22 +70,26 @@ export default function ProductDetailsPaper({ product, className }: Props) {
               </AnchorLink>
             </h2>
           </div>
-          <div className="flex space-x-6 border-y border-light-500 py-3 rtl:space-x-reverse dark:border-dark-400 sm:py-4 lg:border-0 lg:py-0">
+          {/* <div className="flex space-x-6 border-y border-light-500 rtl:space-x-reverse dark:border-dark-400 sm:py-4 lg:border-0 lg:py-0">
             {!isFreeItem && (
               <div className="flex items-center tracking-[.1px] text-dark dark:text-light">
                 <ShoppingCartIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-900" />
-                {pluralize(t('text-sale'), orders_count, true)}
+                {pluralize(t('text-rents'), orders_count, true)}
               </div>
             )}
             <div className="flex items-center tracking-[.1px] text-dark dark:text-light">
               <DownloadIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-900" />
               {pluralize(t('text-download'), total_downloads, true)}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex flex-col-reverse items-center py-3.5 xs:flex-row xs:gap-2.5 sm:py-4 md:gap-3.5 lg:w-[480px] lg:gap-4 lg:py-2 2xl:w-2/5 3xl:w-[480px]">
-        {!isFreeItem ? (
+        <RentNowButton
+          className="mt-2.5 w-full flex-1 xs:mt-0 xs:w-auto"
+          item={product}
+        />
+        {/* {!isFreeItem ? (
           <AddToCart
             className="mt-2.5 w-full flex-1 xs:mt-0 xs:w-auto"
             item={product}
@@ -106,7 +111,7 @@ export default function ProductDetailsPaper({ product, className }: Props) {
           >
             {t('text-live-preview')}
           </a>
-        )}
+        )} */}
       </div>
     </div>
   );

@@ -5,33 +5,27 @@ import Button from '@/components/ui/button';
 import { useCart } from '@/components/cart/lib/cart.context';
 import usePrice from '@/lib/hooks/use-price';
 import type { Product } from '@/types';
-import { generateCartItem } from './lib/generate-cart-item';
-import { useTranslation } from 'next-i18next';
+import { generateCartItem } from '../cart/lib/generate-cart-item';
+// import { generateCartItem } from '';
 
 interface Props {
   item: Product;
   className?: string;
   toastClassName?: string;
-  withPrice?: boolean;
-  variant?: 'outline' | 'fill';
 }
 
-export default function AddToCart({
+export default function RentNowButton({
   item,
   className,
   toastClassName,
-  withPrice = true,
-  variant = 'fill',
 }: Props) {
-  const { t } = useTranslation('common');
-  const { addItemToCart, updateCartLanguage, language, isInStock } = useCart();
+  const { addItemToCart } = useCart();
   const [addToCartLoader, setAddToCartLoader] = useState(false);
   const [cartingSuccess, setCartingSuccess] = useState(false);
   const { price } = usePrice({
     amount: item?.sale_price ? item?.sale_price : item?.price,
     baseAmount: item?.price,
   });
-
   function handleAddToCart() {
     setAddToCartLoader(true);
     setTimeout(() => {
@@ -40,12 +34,9 @@ export default function AddToCart({
     }, 650);
   }
   function addSuccessfully() {
-    if (item?.language !== language) {
-      updateCartLanguage(item?.language);
-    }
     setCartingSuccess(true);
     addItemToCart(generateCartItem(item), 1);
-    toast.success(<b>{t('text-add-to-cart-message')}</b>, {
+    toast.success(<b>Successfully added to the cart!</b>, {
       className: toastClassName,
     });
     setTimeout(() => {
@@ -63,9 +54,8 @@ export default function AddToCart({
           : 'pointer-events-auto cursor-pointer',
         className
       )}
-      disabled={isInStock(item?.id)}
     >
-      {t('text-rent-now')} {withPrice && price}
+      Rent Now {price}
       <svg
         viewBox="0 0 37 37"
         xmlns="http://www.w3.org/2000/svg"

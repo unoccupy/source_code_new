@@ -91,18 +91,18 @@ export function Sidebar({
               icon={<ProductIcon className="h-4 w-4 text-current" />}
             />
             <NavLink
-              title={t('text-top-authors')}
-              href={routes.authors}
+              title={t('text-top-rentals')}
+              href={routes.rentals}
               isCollapse={isCollapse}
               icon={<PeopleIcon className="h-[18px] w-[18px] text-current" />}
             />
 
-            <NavLink
+            {/* <NavLink
               title={t('text-feed')}
               href={routes.feed}
               isCollapse={isCollapse}
               icon={<FeedIcon className="h-[17px] w-[17px] text-current" />}
-            />
+            /> */}
 
             <NavLink
               title={t('text-contact')}
